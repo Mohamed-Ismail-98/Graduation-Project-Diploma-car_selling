@@ -1,5 +1,7 @@
 import 'package:car_selling/core/classes/statusrequest.dart';
+import 'package:car_selling/core/constant/imageasset.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class HandlingDataView extends StatelessWidget {
   final StatusRequest statusRequest;
@@ -27,13 +29,13 @@ class HandlingDataView extends StatelessWidget {
   Widget build(BuildContext context) {
     return
     statusRequest == StatusRequest.loading ?
-    const Center(child: Text("Loading")) :
+     Center(child: Lottie.asset(AppImageAsset.loading,width: 250,height: 250)) :
     statusRequest == StatusRequest.offlinefailure ?
-    const Center(child: Text("Offline Failure")) :
+     Center(child: Lottie.asset(AppImageAsset.offline,width: 250,height: 250)) :
     statusRequest == StatusRequest.serverfailure ?
-    const Center(child: Text("Server Failure")) :
+     Center(child: Lottie.asset(AppImageAsset.server,width: 250,height: 250)) :
     statusRequest == StatusRequest.failure ?
-    const Center(child: Text("No Data", style: TextStyle(fontSize: 30),)) :
+     Center(child: Lottie.asset(AppImageAsset.noData,width: 250,height: 250,repeat: false)) :
         widget;
   }
 }
